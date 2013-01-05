@@ -21,7 +21,7 @@ thunder_boat_image.LoadFromFile( thunder_boat_file_name )
 thunder_boat = sf.Sprite(thunder_boat_image)
 
 thunder_boat.SetPosition(400, 300)
-thunder_boat.SetSubRect(sf.IntRect(192, 0,288, 96))
+thunder_boat.SetSubRect(sf.IntRect(192, 0, 288, 96))
 thunder_boat.SetScale( 1, 1 )
 elapsed_time = window.GetFrameTime()
 
