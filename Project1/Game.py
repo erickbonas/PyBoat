@@ -1,10 +1,11 @@
+# -*- coding: utf-8 _*_
 '''
 Created on 29/12/2012
 
 @author: boni
 '''
 from PySFML import *
-
+from cache import Cache
 
 class Game:
     '''
@@ -13,12 +14,13 @@ class Game:
     _window      = None
     _window_size = None
     _running     = None
+    _cache_image = None
     
     def __init__( self, size, name ):
         '''
         Constructor
         '''
-        self._window = sf.RenderWindow( sf.VideoMode( size ), name )
+        self._window = sf.RenderWindow( sf.VideoMode( size[0], size[1] ), name )
         self._running = True
     #__init()__    
     
@@ -26,11 +28,12 @@ class Game:
         '''
         Tratas os eventos do jogo
         '''
-        
         event = sf.Event()
-        while event.Type == sf.Event.Closed:
-            return False
-    #handle_event
+        while self._window.GetEvent(event):
+            if event.Type == sf.Event.Closed:
+                self._running = False 
+    #handle_event()
+    
     def _objects_draw(self):
         pass
     
@@ -38,9 +41,11 @@ class Game:
         '''
         Laço principal do jogo 
         '''
+        
+        #Cria o personagen
         while self._running:
             
-            self.handle_event()
+            self._handle_event()
             
             self._window.Clear()
             self._window.Display()        
