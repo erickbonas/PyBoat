@@ -5,7 +5,9 @@ Created on 28/12/2012
 '''
 import os
 #from PySFML import *
-from game import Game
+from Game import Game
+import scenes
+from scenes import SceneGame
 '''
 #Create the main window
 window = sf.RenderWindow( sf.VideoMode( 800, 600 ), "ThunderBoat" )
@@ -42,7 +44,7 @@ while running:
     if window.GetInput().IsKeyDown(sf.Key.D):
         thunder_boat.SetSubRect(sf.IntRect(0, 0,96, 96))
         thunder_boat.Move( 5, 0)
-        
+        callable
     if window.GetInput().IsKeyDown(sf.Key.W):
         thunder_boat.SetSubRect(sf.IntRect(192, 0,288, 96))
         thunder_boat.Move( 0, -5 )
@@ -56,9 +58,14 @@ while running:
     window.Draw( thunder_boat )
     window.Display()  
 ''' 
+
+
+
 def main():
-    pyboat = Game( [800, 600], "ThunderBoat" )
-    pyboat.game_loop()
+    game = Game()
+    scene = SceneGame()
+    game.change_scene( scene )
+    game.loop()
 # main()
     
 
