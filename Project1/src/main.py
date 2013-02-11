@@ -62,7 +62,7 @@ while running:
 
 
 def main():
-    game = Game()
+    game  = Game()
     scene = SceneGame()
     game.change_scene( scene )
     game.loop()

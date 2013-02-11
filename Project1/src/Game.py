@@ -17,7 +17,6 @@ class Game(object):
     cena_atual  (private)
 
     """
-    
     def __init__( self ):
         self._current_scene = None
         #Create the main window
@@ -29,7 +28,7 @@ class Game(object):
         Método responsável por pegar a janela do game
         """
         return self._window
-    
+    #get_window()
     
     def change_scene( self, new_scene ):
         """

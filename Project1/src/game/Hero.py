@@ -4,7 +4,7 @@ Created on 07/01/2013
 @author: boni
 '''
 
-from GameObject import GameObject
+from GameObject import *
 from PySFML import *
 class Hero(GameObject):
     '''

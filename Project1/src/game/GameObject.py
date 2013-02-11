@@ -10,12 +10,7 @@ class GameObject(object):
 
     """ ATTRIBUTES
 
-     
-
     _position_x  (private)
-
-     
-
     _position_y  (private)
 
     """
